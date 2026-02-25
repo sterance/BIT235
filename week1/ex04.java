@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class ex4 {
+class ex04 {
   public static void main(String[] args) {
     Scanner myObj = new Scanner(System.in);
     System.out.println("Enter your age: ");

@@ -1,4 +1,4 @@
-public class ex1 {
+public class ex01 {
     public static void main(String[] args) {
         int age = 32;
         double height = 1.8;

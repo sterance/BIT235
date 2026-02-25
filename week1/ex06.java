@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class ex6 {
+class ex06 {
   public static void main(String[] args) {
     Scanner myObj = new Scanner(System.in);
     System.out.println("Enter a number: ");
