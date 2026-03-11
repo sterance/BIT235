@@ -27,7 +27,6 @@ class ex01 {
             }
             System.out.println("The student number is " + (i % 2 == 0 ? "even" : "odd"));
         }
-        myObj.close();
     }
 
 }
