@@ -1,0 +1,20 @@
+<!-- Chris Smith - S1564427 -->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiki Error</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="error-msg" th:text="${error}">Login failed</h1>
+      <p>Your login attempt was unsuccessful.</p>
+      <p class="sadface">:'(</p>
+      <p>Please check your username and password.</p>
+      <a href="/" class="btn-retry">Try Again</a>
+    </div>
+  </body>
+</html>

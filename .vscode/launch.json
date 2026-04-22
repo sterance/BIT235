@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-WikiApplication<wiki>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.bit235.wiki.WikiApplication",
+            "projectName": "wiki",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
