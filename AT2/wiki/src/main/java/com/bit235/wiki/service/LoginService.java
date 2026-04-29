@@ -1,7 +1,9 @@
 // Chris Smith - S1564427
 
+// defines the package
 package com.bit235.wiki.service;
 
+// imports
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 

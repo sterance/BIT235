@@ -1,7 +1,9 @@
 // Chris Smith - S1564427
 
+// defines the package
 package com.bit235.wiki.controller;
 
+// imports
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
