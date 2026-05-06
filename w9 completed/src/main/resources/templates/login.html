@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
+</head>
+
+<body>
+    <main class="auth-shell">
+        <section class="auth-panel">
+            <div class="auth-brand">
+                <span class="brand-mark">W8</span>
+                <p class="brand-kicker">Welcome back!</p>
+                <h1>Sign in to continue</h1>
+                <p class="brand-copy">
+                    Access your dashboard, manage your account, and keep everything in one place.
+                </p>
+            </div>
+
+            <div class="auth-card">
+                <div class="card-header">
+                    <h2>Login</h2>
+                    <p>Enter your details below</p>
+                </div>
+
+                <p class="status-message" th:if="${message}"
+                   th:classappend="${messageType == 'success'} ? ' success' : ' error'"
+                   th:text="${message}">
+                    Status message
+                </p>
+            <div th:if="${person != null}">
+                <h2>Login Successful</h2>
+                <p>Username: <span th:text="${person.username}"></span></p>
+                <p>Country: <span th:text="${person.country.name}"></span></p>
+            </div>
+
+                <form class="auth-form" action="/submitUser" method="post" th:action="@{/submitUser}">
+                    <div class="field">
+                        <label for="username">Username or email</label>
+                        <input type="text" id="username" name="username" placeholder="yourname@example.com"
+                            autocomplete="username" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password"
+                            autocomplete="current-password" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="remember">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a class="form-link" href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign in</button>
+                </form>
+
+                <p class="card-footer">
+                    Don't have an account?
+                    <a href="#">Create one</a>
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
