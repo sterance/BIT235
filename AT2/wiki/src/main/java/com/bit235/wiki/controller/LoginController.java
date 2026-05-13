@@ -23,10 +23,10 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    // maps root url to index.html
-    @GetMapping("/")
-    public String index() {
-        return "index";
+    // maps /login url to login.html
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
     }
 
     // maps /login url to login result 

@@ -1,23 +1,127 @@
 /* Chris Smith - S1564427 */
 
-body {
+html {
   font-family:
     system-ui,
     -apple-system,
     sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
   background-color: #f3f4f6;
 }
+
+.home-layout {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.home-layout header {
+  grid-column: 1 / -1;
+  padding: 0.25rem 0.5rem;
+  background-color: #ffffff;
+}
+
+.home-layout .sidebar {
+  grid-row: 2;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+.home-layout .sidebar a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111827;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.home-layout .sidebar a:hover,
+.home-layout .sidebar a:focus-visible {
+  background-color: #e5e7eb;
+}
+
+.home-layout .home {
+  grid-row: 2;
+  grid-column: 2;
+  padding: 1.5rem;
+}
+
+@media (max-width: 720px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .home-layout .sidebar {
+    grid-row: 2;
+    grid-column: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .home-layout .home {
+    grid-row: 3;
+    grid-column: 1;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid;
+}
+
+header h1 {
+  margin: 0;
+}
+header button,
+header .button {
+  margin: 0;
+}
+
+header button,
+header .button {
+  flex: none;
+  padding: 0rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-and-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 .login-box {
   background: white;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -94,6 +198,24 @@ button {
 }
 
 .sadface {
-    font-size: xx-large;
-    font-weight: bold;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.home {
+  position: relative;
+  z-index: 0;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("logo.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+  pointer-events: none;
 }
